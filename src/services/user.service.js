@@ -44,7 +44,6 @@ const checkUser = async (email, password) => {
 
 const createUser = async (displayName, email, password) => {
   const error = await validations.validateNewUser(displayName, email, password);
-  console.log('error2 :', error);
   if (error.type) return error;
 
   const doesUserExist = await getUserByEmail(email);

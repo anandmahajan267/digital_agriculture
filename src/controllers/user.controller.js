@@ -51,18 +51,13 @@ const loginUser = async (req, res) => {
 const createUser = async (req, res) => {
   try {
     const { displayName, email, password } = req.body;
-    console.log('req.body : ', req.body);
 
     const { type, message } = await UserService.createUser(displayName, email, password);
-    console.log('type : ', type);
-    console.log('message : ', message);
     if (type) return res.status(errorMap.mapError(type)).json({ message });
 
     const token = generateToken(message.id, JWT_SECRET);
-    console.log('token : ', token);
     return res.status(201).json({ token });
   } catch (err) {
-    console.log('err : ', err);
     return res.status(500).json({ message: error500message });
   }
 };

@@ -28,9 +28,17 @@ const validateNewOrganization = async (name, description) => {
   return { type: null, message: '' };
 };
 
+const validateNewProperty = async (name, description) => {
+  const { error } = schemas.propertySchema.validate({ name, description });
+  if (error) return { type: 'INVALID_VALUE', message: error.message };
+
+  return { type: null, message: '' };
+};
+
 module.exports = {
   validateId,
   validateLogin,
   validateNewUser,
   validateNewOrganization,
+  validateNewProperty,
 };

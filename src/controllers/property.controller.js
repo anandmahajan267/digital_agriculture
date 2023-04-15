@@ -1,17 +1,17 @@
 require('dotenv/config');
 
-const OrganizationService = require('../services/organization.service');
+const PropertyService = require('../services/property.service');
 const errorMap = require('../utils/errorMap');
 
 const error500message = 'Internal error';
 
-const createOrganization = async (req, res) => {
+const createProperty = async (req, res) => {
   try {
     const { name, description } = req.body;
     const { userId } = req.user;
 
-    const { type, message } = await OrganizationService
-      .createOrganization(name, description, userId);
+    const { type, message } = await PropertyService
+      .createProperty(name, description, userId);
     if (type) return res.status(errorMap.mapError(type)).json({ message });
 
     return res.status(201).json(message.dataValues);
@@ -21,5 +21,5 @@ const createOrganization = async (req, res) => {
 };
 
 module.exports = {
-  createOrganization,
+  createProperty,
 };
