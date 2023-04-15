@@ -21,8 +21,16 @@ const validateNewUser = async (displayName, email, password) => {
   return { type: null, message: '' };
 };
 
+const validateNewOrganization = async (name, description) => {
+  const { error } = schemas.organizationSchema.validate({ name, description });
+  if (error) return { type: 'INVALID_VALUE', message: error.message };
+
+  return { type: null, message: '' };
+};
+
 module.exports = {
   validateId,
   validateLogin,
   validateNewUser,
+  validateNewOrganization,
 };

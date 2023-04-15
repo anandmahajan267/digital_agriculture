@@ -10,8 +10,6 @@ router.get('/', auth, UserController.getAllUsers);
 
 router.post('/', UserController.createUser);
 
-router.post('/login', UserController.loginUser);
-
 router.delete('/me', auth, UserController.deleteUser);
 
 router.get('/:id', auth, UserController.getUserById);

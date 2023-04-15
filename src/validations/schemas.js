@@ -32,8 +32,26 @@ const userSchema = Joi.object({
     .required(),
 });
 
+const organizationSchema = Joi.object({
+  name: Joi.string()
+    .min(1)
+    .required()
+    .messages({
+      'any.required': requiredFieldsMessage,
+      'string.empty': requiredFieldsMessage,
+    }),
+  description: Joi.string()
+    .min(1)
+    .required()
+    .messages({
+      'any.required': requiredFieldsMessage,
+      'string.empty': requiredFieldsMessage,
+    }),
+});
+
 module.exports = {
   idSchema,
   loginSchema,
   userSchema,
+  organizationSchema,
 };
