@@ -88,7 +88,7 @@ npm install
 npm run prestart
 ```
 
-5. to updated the database with the sample data
+5. To populate a database with an initial set of data
 
 ```
 npm run seed
