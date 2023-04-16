@@ -9,6 +9,7 @@
   <li><a href="#technologies">Technologies</a></li>
   <li><a href="#features">Features</a></li>
   <li><a href="#how-to-run">How to Run</a></li>
+  <li><a href="#sample-data">Sample Data</a></li>
 </ol>
 
 
@@ -66,8 +67,7 @@ cd digital_agriculture/
 ```
 
 
-
-  <summary><strong>💽 Locally</strong></summary>
+  <summary><strong>Local Setup</strong></summary>
 
 1. Make sure you have **Node.js** installed in version 16 or higher.
 
@@ -96,17 +96,31 @@ npm run seed
   
 6. To start the server, use one of the commands below.
 
-```
-// Command 1 - Needs to be run again in case of code changes
-npm run start
 
+// Command 1 - Needs to be run again in case of code changes
+```
+npm run start
+```
 // Command 2 - Restarts the server automatically if there is any code change
+```
 npm run start:dev
 ```
 
-7. Postman Colleaction .
+<br/>
+
+## Sample Data
+here is mysql database & postman collection Just for refrence 
+
+1. Postman Colleaction .
 ```
-https://github.com/anandmahajan267/digital_agriculture/tree/main/postman_collection
+https://github.com/anandmahajan267/digital_agriculture/tree/main/data/postman_collection
 ```
 
+2. Mysql Database dump .
+```
+https://github.com/anandmahajan267/digital_agriculture/tree/main/data/db
+```
 <br/>
+
+
+
