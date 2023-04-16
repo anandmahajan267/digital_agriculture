@@ -56,7 +56,7 @@ To run the project, follow the steps below.
 1. Clone the repository;
 
 ```
-git clone [https://github.com/anandmahajan267/digital_agriculture.git](https://github.com/anandmahajan267/digital_agriculture.git)
+git clone https://github.com/anandmahajan267/digital_agriculture.git
 ```
 
 2. Navigate to the project root;
@@ -106,7 +106,7 @@ npm run start:dev
 
 7. Postman Colleaction .
 ```
-git clone [https://github.com/anandmahajan267/digital_agriculture.git](https://github.com/anandmahajan267/digital_agriculture.git)
+https://github.com/anandmahajan267/digital_agriculture/tree/main/postman_collection
 ```
 
 <br/>
