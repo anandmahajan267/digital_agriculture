@@ -1,5 +1,4 @@
 const express = require('express');
-// require('express-async-errors');
 
 const PropertyController = require('../controllers/property.controller');
 const auth = require('../middlewares/auth');

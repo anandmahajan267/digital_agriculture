@@ -66,10 +66,40 @@ const propertySchema = Joi.object({
     }),
 });
 
+const regionFieldSchema = Joi.object({
+  name: Joi.string()
+    .min(1)
+    .required()
+    .messages({
+      'any.required': requiredFieldsMessage,
+      'string.empty': requiredFieldsMessage,
+    }),
+  description: Joi.string()
+    .min(1)
+    .required()
+    .messages({
+      'any.required': requiredFieldsMessage,
+      'string.empty': requiredFieldsMessage,
+    }),
+  parentId: Joi.number()
+    .integer()
+    .required()
+    .messages({
+      'any.required': requiredFieldsMessage,
+      'number.empty': requiredFieldsMessage,
+    }),
+  rowType: Joi.required()
+   // .valid('REGION', 'FIELD')
+    .messages({
+      'any.required': requiredFieldsMessage,
+    }),
+});
+
 module.exports = {
   idSchema,
   loginSchema,
   userSchema,
   organizationSchema,
   propertySchema,
+  regionFieldSchema,
 };

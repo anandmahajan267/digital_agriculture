@@ -1,5 +1,4 @@
 const express = require('express');
-// require('express-async-errors');
 
 const OrganizationController = require('../controllers/organization.controller');
 const auth = require('../middlewares/auth');
