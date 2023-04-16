@@ -64,6 +64,13 @@ const propertySchema = Joi.object({
       'any.required': requiredFieldsMessage,
       'string.empty': requiredFieldsMessage,
     }),
+  regionFieldId: Joi.number()
+    .integer()
+    .required()
+    .messages({
+      'any.required': requiredFieldsMessage,
+      'number.empty': requiredFieldsMessage,
+    }),
 });
 
 const regionFieldSchema = Joi.object({
@@ -89,7 +96,7 @@ const regionFieldSchema = Joi.object({
       'number.empty': requiredFieldsMessage,
     }),
   rowType: Joi.required()
-   // .valid('REGION', 'FIELD')
+    // .valid('REGION', 'FIELD')
     .messages({
       'any.required': requiredFieldsMessage,
     }),

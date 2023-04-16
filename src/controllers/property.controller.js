@@ -7,11 +7,10 @@ const error500message = 'Internal error';
 
 const createProperty = async (req, res) => {
   try {
-    const { name, description } = req.body;
-    const { userId } = req.user;
+    const { name, description, regionFieldId } = req.body;
 
     const { type, message } = await PropertyService
-      .createProperty(name, description, userId);
+      .createProperty(name, description, regionFieldId);
     if (type) return res.status(errorMap.mapError(type)).json({ message });
 
     return res.status(201).json(message.dataValues);

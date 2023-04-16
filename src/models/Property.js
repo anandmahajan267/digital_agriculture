@@ -14,6 +14,11 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       type: DataTypes.TEXT,
     },
+    region_field_id: {
+      allowNull: false,
+      foreignKey: true,
+      type: DataTypes.INTEGER,
+    },
     created_on: {
       allowNull: false,
       type: DataTypes.DATE,
@@ -29,6 +34,11 @@ module.exports = (sequelize, DataTypes) => {
       underscored: false,
     }
   );
+
+  Property.associate = (models) => {
+    Property.belongsTo(models.RegionField,
+      { foreignKey: 'region_field_id', as: 'region_field' });
+  };
 
   return Property;
 };

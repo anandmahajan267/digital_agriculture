@@ -40,9 +40,14 @@ const validateNewOrganization = async (name, description, propertyIds) => {
   return { type: null, message: '' };
 };
 
-const validateNewProperty = async (name, description) => {
-  const { error } = schemas.propertySchema.validate({ name, description });
+const validateNewProperty = async (name, description, regionFieldId) => {
+  const { error } = schemas.propertySchema.validate({ name, description, regionFieldId });
   if (error) return { type: 'INVALID_VALUE', message: error.message };
+
+  const regionField = await RegionField.findOne({ where: { id: regionFieldId } });
+  if (!regionField) {
+    return { type: 'INVALID_VALUE', message: 'Please provide vaild regionFieldId' };
+  }
 
   return { type: null, message: '' };
 };

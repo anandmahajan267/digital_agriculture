@@ -17,6 +17,16 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING,
       },
+      region_field_id: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'region_field',
+          key: 'id',
+        },
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE',
+      },
       created_on: {
         allowNull: false,
         type: Sequelize.DATE

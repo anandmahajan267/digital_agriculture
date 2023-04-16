@@ -3,15 +3,15 @@ module.exports = {
     await queryInterface.bulkInsert('users',
       [{
         id: 1,
-        display_name: 'Lewis Hamilton',
-        email: 'lewishamilton@gmail.com',
-        password: '123456'
+        display_name: 'Anand Mahajan',
+        email: 'anandmahajan267@gmail.com',
+        password: 'test123'
       },
       {
         id: 2,
-        display_name: 'Michael Schumacher',
-        email: 'MichaelSchumacher@gmail.com',
-        password: '123456'
+        display_name: 'Anand test Account',
+        email: 'anand.testaccount@gmail.com',
+        password: 'test123'
       },
       ], { timestamps: false });
   },

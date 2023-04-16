@@ -7,7 +7,6 @@ const error500message = 'Internal error';
 
 const createRegionField = async (req, res) => {
   try {
-
     const { name, description, parentId, rowType } = req.body;
 
     const { type, message } = await RegionFieldService

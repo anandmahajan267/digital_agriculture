@@ -9,15 +9,15 @@ const sequelize = new Sequelize(config[env]);
 const { Property } = require('../models');
 const validations = require('../validations/validateInputValues');
 
-const createProperty = async (name, description) => {
-  const error = await validations.validateNewProperty(name, description);
+const createProperty = async (name, description, regionFieldId) => {
+  const error = await validations.validateNewProperty(name, description, regionFieldId);
   if (error.type) return error;
 
   const result = await sequelize.transaction(async (t) => {
     const date = new Date().toJSON();
 
     const newOrganization = await Property
-      .create(snakeize({ name, description, createdOn: date, updatedOn: date }),
+      .create(snakeize({ name, description, regionFieldId, createdOn: date, updatedOn: date }),
         { transaction: t });
 
     return { type: null, message: camelize(newOrganization) };
